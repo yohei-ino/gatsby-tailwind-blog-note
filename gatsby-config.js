@@ -20,6 +20,7 @@ module.exports = {
       options: {
         // basePath defaults to `/`
         basePath: `/blog`,
+        preset: `false`,
       },
     },
     `gatsby-plugin-postcss`,
