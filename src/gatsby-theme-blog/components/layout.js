@@ -2,7 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { css, Themed } from "theme-ui"
 import { SkipNavContent } from "@reach/skip-nav"
-import Header from "gatsby-theme-blog/src/components/header"
+import Header from "./header"
 import useBlogThemeConfig from "gatsby-theme-blog/src/hooks/configOptions"
 
 const Layout = ({ children, ...props }) => {
