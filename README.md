@@ -1,1 +1,1 @@
-# Gatsby Tailwind Darkmode
+# Gatsby Tailwind - Blog and Note
