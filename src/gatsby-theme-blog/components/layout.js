@@ -1,34 +1,15 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { css, Themed } from "theme-ui"
-import { SkipNavContent } from "@reach/skip-nav"
-import Header from "./header"
-import useBlogThemeConfig from "gatsby-theme-blog/src/hooks/configOptions"
+import React from "react"
+import { ToggleDarkMode } from '../../components/ToggleDarkMode'
+import "../../styles/index.css";
 
 const Layout = ({ children, ...props }) => {
-  const blogThemeConfig = useBlogThemeConfig()
-  const { webfontURL } = blogThemeConfig
-
   return (
-    <Themed.root>
-      <Helmet>
-        <link rel="stylesheet" href={webfontURL} />
-      </Helmet>
-      <Header {...props} />
-      <SkipNavContent />
-      <div>
-        <div
-          css={css({
-            maxWidth: `container`,
-            mx: `auto`,
-            px: 3,
-            py: 4,
-          })}
-        >
-          {children}
-        </div>
-      </div>
-    </Themed.root>
+    <>
+      <body className="min-h-screen dark:bg-gray-700 dark:text-gray-200">
+        <ToggleDarkMode />
+        {children}
+      </body>
+    </>
   )
 }
 
