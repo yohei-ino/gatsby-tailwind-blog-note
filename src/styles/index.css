@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("./global.css");
 
 .toggle-checkbox {
   @apply absolute block w-6 h-6 dark:bg-white border-4 dark:border-gray-400 rounded-full appearance-none cursor-pointer focus:outline-none bg-gray-800 border-gray-100;
