@@ -23,6 +23,14 @@ module.exports = {
         preset: `false`,
       },
     },
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `note`,
+        path: `${__dirname}/content/notes/`,
+      },
+    },
     `gatsby-plugin-postcss`,
   ],
 }
