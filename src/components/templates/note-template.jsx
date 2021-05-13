@@ -1,17 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { MDXProvider } from "@mdx-js/react"
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
+import CodeBlock from '../CodeBlock'
 import Layout from '../layout'
-export default function pageTemplate({ data: { mdx } }) {
 
+const components = {
+  pre: CodeBlock,
+}
+
+const PageTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
       <h1>{mdx.frontmatter.title}</h1>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
+      <article className="prose prose-sm lg:prose-lg dark:prose-dark max-w-none">
+        <MDXProvider components={components}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
+      </article>
       <p>{mdx.frontmatter.author}</p>
     </Layout>
   )
 }
+
+export default PageTemplate
 
 export const pageQuery = graphql`
     query NotePostQuery($id: String) {
